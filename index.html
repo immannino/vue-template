@@ -1,1 +1,59 @@
-<html><head><meta http-equiv="refresh" content="0;https://gist.githubusercontent.com/immannino/cd449e57ee6b8a762efdd41c84c9899d/raw/657cd4c8fc6803da7eb03edfbb8768437bf45747/vue-template.html"></head></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Site Behavior tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Basic site info-->
+    <meta name="title" data-hid="title" content="">
+    <meta name="description" data-hid="description" content="">
+
+    <!-- Open Graph (Facebook/Linkedin) tags -->
+    <!-- Testing tool: https://developers.facebook.com/tools/debug/ -->
+    <meta property="og:site_name" content="">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="http://">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+    <!-- Twitter tags -->
+    <!-- Testing tool: https://cards-dev.twitter.com/validator -->
+    <meta name="twitter:site" content="http://">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:image:alt" content="">
+    <title>Document</title>
+    
+    <!-- Inline SVG Emoji Icon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1-rc.0/web3.min.js" integrity="sha512-+4Gl8sbHe5qD5EQiPtIva4be9TwUmmzgYJUdGbhsLYNegQw4Quda/4QdZpJzx8cHq2s1F4PoIpAnERQ0hHTcNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/vue-toast-notification@2/dist/theme-sugar.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+</head>
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+    <script>
+        const app = Vue.createApp({
+            el: '#app',
+            data: {
+                message: 'Hehe'
+            }
+        })
+        
+        app.use(VueToast);
+        app.mount('#app');
+    </script>
+</body>
+</html>
