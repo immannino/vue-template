@@ -28,7 +28,7 @@
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
     <meta name="twitter:image:alt" content="">
-    <title>Document</title>
+    <title>Vue Template | spaghet</title>
     
     <!-- Inline SVG Emoji Icon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
@@ -36,24 +36,92 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1-rc.0/web3.min.js" integrity="sha512-+4Gl8sbHe5qD5EQiPtIva4be9TwUmmzgYJUdGbhsLYNegQw4Quda/4QdZpJzx8cHq2s1F4PoIpAnERQ0hHTcNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/vue-toast-notification@2/dist/theme-sugar.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
 </head>
 <body>
     <div id="app">
-        {{message}}
+        <h1>Vue Template</h1>
+        <blockquote>A simple inline <code>index.html</code> VueJS template for building single-file websites.</blockquote>
+        <div class="row">
+            <input ref="cmd" type="text" disabled value="curl https://vue-template.spaghet.me -o index.html">
+            <button @click="Copy()">Copy</button>
+        </div>
+        <h3>Resources in this file:</h3>
+        <p>Simple remove anything you don't need!</p>
+        <ul>
+            <li>Inline SVG favicon</li>
+            <li>SEO Meta Tags: OG + Twitter</li>
+            <li>SEO Meta Tags: OG + Twitter</li>
+            <li><a href="https://vuejs.org/guide/introduction.html">Vue@3</a></li>
+            <li><a href="https://www.npmjs.com/package/vue-toast-notification">VueToast@2</a></li>
+            <li><a href="https://newcss.net/">new.css</a></li>
+        </ul>
+        <hr>
+        <p>Make your own! Creating a template helps lower the barrier of entry for getting started.</p>
+        <footer><a href="https://www.spaghet.me">Made by tones 👨🏻</a></footer>
     </div>
     <script>
         const app = Vue.createApp({
             el: '#app',
-            data: {
-                message: 'Hehe'
+            data() {
+                return {
+                    message: 'Hehe'
+                }
+            },
+            methods: {
+                Copy() {
+                    /* Select the text field */
+                    this.$refs.cmd.select();
+                    this.$refs.cmd.setSelectionRange(0, 99999); /* For mobile devices */
+
+                    /* Copy the text inside the text field */
+                    navigator.clipboard.writeText(this.$refs.cmd.value);
+
+                    this.$toast.success('Copied!', { duration: 2000 });
+                }
             }
         })
-        
-        app.use(VueToast);
+        app.use(VueToast)
         app.mount('#app');
     </script>
+    <style>
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .row > * {
+            padding: 0.75rem 0.25rem;
+        }
+
+        input {
+            flex: 1 1 auto;
+            font-family: monospace;
+            margin: 0;
+        }
+
+        button {
+            flex: 0 1 100px;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        @media screen and (max-width: 650px) {
+            .row {
+                display: block;
+            }
+
+            .row > * {
+                width: 100%;
+                margin: 1rem 0;
+            }
+        }
+    </style>
 </body>
 </html>
