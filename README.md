@@ -1,5 +1,9 @@
 # vue-template.spaghet.me
 
-> A redirection route directly to the raw gist for my inline Vue.js html template.
+> a simple batteries included HTML + Vue.js template
 
-[The template](https://gist.github.com/immannino/cd449e57ee6b8a762efdd41c84c9899d)
+### Usage
+
+```sh
+curl https://vue-template.spaghet.me -o index.html
+```
