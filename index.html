@@ -35,16 +35,22 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@2"></script>
-
     <link href="https://cdn.jsdelivr.net/npm/vue-toast-notification@2/dist/theme-sugar.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+    <!-- New.css
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">  -->
+
+    <!-- Magick CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/magick.css">
 </head>
 <body>
-    <div id="app">
-        <h1>Vue Template</h1>
-        <blockquote>A simple inline <code>index.html</code> VueJS template for building single-file websites.</blockquote>
+    <main id="app">
+        <header> <h1>Vue Template</h1> </header>
+        <section> <blockquote>A simple inline <code>index.html</code> VueJS template for building single-file websites.</blockquote></section>
+        <section> 
+
         <div class="row">
-            <input ref="cmd" type="text" disabled value="curl https://vue-template.spaghet.me -o index.html">
+            <input ref="cmd" type="text" value="curl https://vue-template.spaghet.me -o index.html">
             <button @click="Copy()">Copy</button>
         </div>
         <h3>Resources in this file:</h3>
@@ -54,11 +60,14 @@
             <li>SEO Meta Tags: OG + Twitter</li>
             <li><a href="https://vuejs.org/guide/introduction.html">Vue@3</a></li>
             <li><a href="https://www.npmjs.com/package/vue-toast-notification">VueToast@2</a></li>
-            <li><a href="https://newcss.net/">new.css</a></li>
+            <li><a href="https://css.winterveil.net/">magick.css</a></li>
         </ul>
         <hr>
         <p>Make your own! Creating a template helps lower the barrier of entry for getting started.</p>
+        </section>
         <footer><a href="https://www.spaghet.me">Made by tones 👨🏻</a></footer>
+    </main>
+    <div id="app">
     </div>
     <script>
         const app = Vue.createApp({
@@ -77,7 +86,7 @@
                     /* Copy the text inside the text field */
                     navigator.clipboard.writeText(this.$refs.cmd.value);
 
-                    this.$toast.success('Copied!', { duration: 2000 });
+                    this.$toast.success('Copied!', { duration: 2000000 });
                 }
             }
         })
